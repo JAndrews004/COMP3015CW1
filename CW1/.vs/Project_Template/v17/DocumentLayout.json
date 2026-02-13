@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\scenebasic_uniform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|solutionrelative:scenebasic_uniform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\scenebasic_uniform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|solutionrelative:scenebasic_uniform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\helper\\scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|solutionrelative:helper\\scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\helper\\scenerunner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|solutionrelative:helper\\scenerunner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\shader\\basic_uniform.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|solutionrelative:shader\\basic_uniform.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\shader\\basic_uniform.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2424A6AC-480B-441A-94EA-86C5C10C6ABF}|Project_Template.vcxproj|solutionrelative:shader\\basic_uniform.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "scene.h",
+              "DocumentMoniker": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\helper\\scene.h",
+              "RelativeDocumentMoniker": "helper\\scene.h",
+              "ToolTip": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\helper\\scene.h",
+              "RelativeToolTip": "helper\\scene.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-12T16:09:12.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "scenerunner.h",
+              "DocumentMoniker": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\helper\\scenerunner.h",
+              "RelativeDocumentMoniker": "helper\\scenerunner.h",
+              "ToolTip": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\helper\\scenerunner.h",
+              "RelativeToolTip": "helper\\scenerunner.h",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAwwJgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-12T16:02:56.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "basic_uniform.vert",
+              "DocumentMoniker": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\shader\\basic_uniform.vert",
+              "RelativeDocumentMoniker": "shader\\basic_uniform.vert",
+              "ToolTip": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\shader\\basic_uniform.vert",
+              "RelativeToolTip": "shader\\basic_uniform.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-12T13:59:41.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "scenebasic_uniform.h",
+              "DocumentMoniker": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\scenebasic_uniform.h",
+              "RelativeDocumentMoniker": "scenebasic_uniform.h",
+              "ToolTip": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\scenebasic_uniform.h",
+              "RelativeToolTip": "scenebasic_uniform.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-12T13:59:00.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "scenebasic_uniform.cpp",
+              "DocumentMoniker": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\scenebasic_uniform.cpp",
+              "RelativeDocumentMoniker": "scenebasic_uniform.cpp",
+              "ToolTip": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\scenebasic_uniform.cpp",
+              "RelativeToolTip": "scenebasic_uniform.cpp",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAgwHEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-12T13:58:56.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "basic_uniform.frag",
+              "DocumentMoniker": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\shader\\basic_uniform.frag",
+              "RelativeDocumentMoniker": "shader\\basic_uniform.frag",
+              "ToolTip": "C:\\Users\\ja990\\OneDrive\\Documents\\UNI\\COMP3015\\CW1\\shader\\basic_uniform.frag",
+              "RelativeToolTip": "shader\\basic_uniform.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-12T13:59:42.494Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
