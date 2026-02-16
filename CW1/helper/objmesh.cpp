@@ -61,6 +61,11 @@ std::unique_ptr<ObjMesh> ObjMesh::load( const char * fileName, bool center, bool
          << " triangles = " << (glMesh.faces.size() / 3) 
 		 << endl << "    " << mesh->bbox.toString() << endl;
 
+    cout << "Points: " << glMesh.points.size() << endl;
+    cout << "TexCoords: " << glMesh.texCoords.size() << endl;
+    cout << "Tangents: " << glMesh.tangents.size() << endl;
+
+
     return mesh;
 }
 

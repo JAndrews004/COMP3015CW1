@@ -12,7 +12,8 @@ public:
     int height;
 
     virtual void toggleLight(int index) {};
-
+    virtual void handleInput(int key) {};
+    virtual void handleMouseInput(double mouseX, double mouseY) {};
 	Scene() : m_animate(true), width(800), height(600) { }
 	virtual ~Scene() {}
 

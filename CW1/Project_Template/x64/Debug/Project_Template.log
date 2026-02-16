@@ -1,2 +1,7 @@
-﻿  scenebasic_uniform.cpp
-  Project_Template.vcxproj -> C:\Users\ja990\OneDrive\Documents\UNI\COMP3015\CW1\x64\Debug\Project_Template.exe
+﻿  main.cpp
+  scenebasic_uniform.cpp
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\scenebasic_uniform.cpp(170,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\scenebasic_uniform.cpp(226,34): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\scenebasic_uniform.cpp(227,36): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Project_Template.vcxproj -> C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\x64\Debug\Project_Template.exe

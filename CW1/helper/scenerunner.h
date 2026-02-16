@@ -117,6 +117,7 @@ private:
     }
 
     void mainLoop(GLFWwindow * window, Scene & scene) {
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         while( ! glfwWindowShouldClose(window) && !glfwGetKey(window, GLFW_KEY_ESCAPE) ) {
             GLUtils::checkForOpenGLError(__FILE__,__LINE__);
 			
@@ -148,6 +149,25 @@ private:
                     keyPressed[i] = false;
                 }
             }
+            if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+            {
+                scene.handleInput(GLFW_KEY_W);
+            }
+            if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+            {
+                scene.handleInput(GLFW_KEY_S);
+            }
+            if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+            {
+                scene.handleInput(GLFW_KEY_A);
+            }
+            if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+            {
+                scene.handleInput(GLFW_KEY_D);
+            }
+            double mouseX, mouseY;
+            glfwGetCursorPos(window, &mouseX, &mouseY);
+            scene.handleMouseInput(mouseX, mouseY);
         }
     }
 };
