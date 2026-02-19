@@ -10,7 +10,6 @@ out vec3 Normal;
 out vec3 Tangent;
 out vec3 Bitangent;
 out vec3 NormalInterp;
-
 out vec2 TexCoord;
 
 uniform mat4 ModelViewMatrix;

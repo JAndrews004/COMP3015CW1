@@ -130,11 +130,11 @@ private:
 			if (state == GLFW_PRESS)
 				scene.animate(!scene.animating());
 
-            static bool keyPressed[4] = { false, false, false, false };
+            static bool keyPressed[5] = { false, false, false, false, false };
 
-            int keys[4] = { GLFW_KEY_1, GLFW_KEY_2, GLFW_KEY_3, GLFW_KEY_4 };
+            int keys[5] = { GLFW_KEY_1, GLFW_KEY_2, GLFW_KEY_3, GLFW_KEY_4 , GLFW_KEY_F };
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 int state = glfwGetKey(window, keys[i]);
 

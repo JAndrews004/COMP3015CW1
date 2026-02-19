@@ -62,14 +62,23 @@ void SceneBasic_Uniform::initScene()
     
     statueTexID = Texture::loadTexture("media/Gold.jpg");
     statueNormID = Texture::loadTexture("media/Gold_NormalMap.jpg");
+    blankMaskID = Texture::loadTexture("media/BlankMask.png");
     
     floorTexID = Texture::loadTexture("media/Floor.jpg");
     floorNormID = Texture::loadTexture("media/Floor_NormalMap.jpg");
+    mossTexID = Texture::loadTexture("media/Moss.png");
+    puddleMaskID = Texture::loadTexture("media/PuddleMask.png");
+    
 
     prog.setUniform("Tex1", 0);
     prog.setUniform("NormalMapTex", 1); 
+    prog.setUniform("Tex2", 2);
+    prog.setUniform("puddleMask", 3);
 
-    
+    prog.setUniform("Spot.L", lightL[4]);
+    prog.setUniform("Spot.La", lightLa[4]);
+    prog.setUniform("Spot.Exponent", 25.0f);
+    prog.setUniform("Spot.Cutoff", glm::radians(30.0f));
 }
 
 void SceneBasic_Uniform::compile()
@@ -110,6 +119,12 @@ void SceneBasic_Uniform::render()
     
     view = glm::lookAt(position, position + front, up);
 
+    glm::vec4 spotPosView = view * glm::vec4(position, 1.0f);
+    glm::vec3 spotDirView = glm::mat3(view) * front;
+
+    prog.setUniform("Spot.Position", spotPosView);
+    prog.setUniform("Spot.Direction", glm::normalize(spotDirView));
+
     prog.setUniform("lights[3].Position", view * topLightPos);
 
     prog.setUniform("Material.Kd", glm::vec3(0.8f, 0.65f, 0.2f));
@@ -135,6 +150,15 @@ void SceneBasic_Uniform::render()
             prog.setUniform(nameLa.str().c_str(), lightLa[i]);
         }
     }
+    if (toggles[4] == 0) {
+        prog.setUniform("Spot.L", glm::vec3(0.0f, 0.0f, 0.0f));
+        prog.setUniform("Spot.La", glm::vec3(0.0f, 0.0f, 0.0f));
+    }
+    else {
+        prog.setUniform("Spot.L", lightL[4]);
+        prog.setUniform("Spot.La", lightLa[4]);
+    }
+
     model = mat4(1.0f);
     model = glm::translate(model, vec3(-1.0f, 0.2f, -0.6f));
     model = glm::rotate(model, glm::radians(90.0f), vec3(0.0f, 1.0f, 0.0f));
@@ -143,8 +167,49 @@ void SceneBasic_Uniform::render()
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, statueTexID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, statueNormID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    glActiveTexture(GL_TEXTURE2);
+    glBindTexture(GL_TEXTURE_2D, statueTexID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    glActiveTexture(GL_TEXTURE3);
+    glBindTexture(GL_TEXTURE_2D, blankMaskID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
 
     mesh->render();
 
@@ -161,9 +226,47 @@ void SceneBasic_Uniform::render()
    
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, floorTexID);
-    
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, floorNormID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    glActiveTexture(GL_TEXTURE2);
+    glBindTexture(GL_TEXTURE_2D, mossTexID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    glActiveTexture(GL_TEXTURE3);
+    glBindTexture(GL_TEXTURE_2D, puddleMaskID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
 
     plane.render();
 
@@ -192,7 +295,7 @@ void SceneBasic_Uniform::setMatrices() {
 }
 
 void SceneBasic_Uniform::toggleLight(int index) {
-    if (index >= 0 && index < 4) {
+    if (index >= 0 && index < 5) {
         toggles[index] = !toggles[index];
     }
 }

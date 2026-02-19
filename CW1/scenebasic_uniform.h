@@ -36,13 +36,13 @@ private:
 
     glm::vec4 topLightPos;
     bool movingPositive = true;
-    int toggles[4] = { 1, 1, 1, 1 };
-    glm::vec3 lightL[4] = { glm::vec3(0.0f, 0.0f, 0.5f),glm::vec3(0.0f, 0.5f, 0.0f),glm::vec3(0.5f, 0.0f, 0.0f),glm::vec3(0.4f, 0.4f, 0.4f) };
+    int toggles[5] = { 1, 1, 1, 1 ,0 };
+    glm::vec3 lightL[5] = { glm::vec3(0.0f, 0.0f, 0.5f),glm::vec3(0.0f, 0.5f, 0.0f),glm::vec3(0.5f, 0.0f, 0.0f),glm::vec3(0.4f, 0.4f, 0.4f) ,glm::vec3(0.63f, 0.13f, 0.94f) };
 
-    glm::vec3 lightLa[4] = { glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f) };
+    glm::vec3 lightLa[5] = { glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f) , glm::vec3(1.0f, 1.0f, 1.0f)};
 
-    GLuint statueTexID, statueNormID;
-    GLuint floorTexID, floorNormID;
+    GLuint statueTexID, statueNormID, blankMaskID;
+    GLuint floorTexID, mossTexID, floorNormID, puddleMaskID;
 
     void compile();
     void setMatrices();
