@@ -22,7 +22,6 @@ uniform mat3 NormalMatrix;
 void main()
 {
 
-
     vec3 N = normalize(NormalMatrix * VertexNormal);
     vec3 T = normalize(NormalMatrix * VertexTangent.xyz);
     T = normalize(T - dot(T, N) * N);

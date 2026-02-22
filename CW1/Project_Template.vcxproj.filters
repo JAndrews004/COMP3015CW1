@@ -39,12 +39,6 @@
     <ClCompile Include="scenebasic_uniform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="helper\teapot.cpp">
-      <Filter>helper</Filter>
-    </ClCompile>
-    <ClCompile Include="helper\torus.cpp">
-      <Filter>helper</Filter>
-    </ClCompile>
     <ClCompile Include="helper\trianglemesh.cpp">
       <Filter>helper</Filter>
     </ClCompile>
@@ -60,12 +54,33 @@
     <ClCompile Include="helper\texture.cpp">
       <Filter>helper</Filter>
     </ClCompile>
+    <ClCompile Include="helper\skybox.cpp">
+      <Filter>helper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader\basic_uniform.frag">
       <Filter>shaders</Filter>
     </None>
     <None Include="shader\basic_uniform.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shader\graffiti.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shader\skybox.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shader\skybox.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shader\graffiti.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shader\toneMap.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shader\toneMap.vert">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>
@@ -94,15 +109,6 @@
     <ClInclude Include="helper\drawable.h">
       <Filter>helper</Filter>
     </ClInclude>
-    <ClInclude Include="helper\teapot.h">
-      <Filter>helper</Filter>
-    </ClInclude>
-    <ClInclude Include="helper\teapotdata.h">
-      <Filter>helper</Filter>
-    </ClInclude>
-    <ClInclude Include="helper\torus.h">
-      <Filter>helper</Filter>
-    </ClInclude>
     <ClInclude Include="helper\trianglemesh.h">
       <Filter>helper</Filter>
     </ClInclude>
@@ -119,6 +125,9 @@
       <Filter>helper</Filter>
     </ClInclude>
     <ClInclude Include="helper\texture.h">
+      <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="helper\skybox.h">
       <Filter>helper</Filter>
     </ClInclude>
   </ItemGroup>

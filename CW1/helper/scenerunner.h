@@ -165,6 +165,10 @@ private:
             {
                 scene.handleInput(GLFW_KEY_D);
             }
+            if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS)
+            {
+                scene.toggleFog();
+            }
             double mouseX, mouseY;
             glfwGetCursorPos(window, &mouseX, &mouseY);
             scene.handleMouseInput(mouseX, mouseY);

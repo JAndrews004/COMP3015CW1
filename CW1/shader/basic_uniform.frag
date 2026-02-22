@@ -7,13 +7,12 @@ in vec2 TexCoord;
 in vec3 Tangent;
 in vec3 Bitangent;
 in vec3 NormalInterp;
-in vec3 Vec;
 
 layout (location = 0) out vec4 FragColor;
 layout (binding = 0) uniform sampler2D Tex1;
 layout (binding = 1) uniform sampler2D NormalMap;
-layout (binding = 3) uniform sampler2D Tex2;
-layout (binding = 4) uniform sampler2D puddleMask;
+layout (binding = 2) uniform sampler2D Tex2;
+layout (binding = 3) uniform sampler2D puddleMask;
 
 uniform struct LightInfo{
     vec4 Position;
@@ -36,6 +35,14 @@ uniform struct SpotLightInfo{
     float Exponent;
     float Cutoff;
 }Spot;
+
+uniform struct FogInfo{
+    vec3 color;
+    float density;
+    float start;  
+    float end;
+    float enabled;   //1 = on, 0 = off
+}Fog;
 
 const int levels = 4;
 const float scaleFactor = 1.0/levels;
@@ -140,9 +147,18 @@ void main() {
     }
     lighting += blinPhongSpotModel(Position,n,texColour,surface);
 
-    //FragColor = vec4(lighting,1);
     
-    FragColor = vec4(lighting,1);
-    //FragColor = vec4(maskRGB,1.0);
+    float fragDistance = abs(Position.z);
+
+    float fogFactor = clamp((Fog.end - fragDistance) / (Fog.end - Fog.start), 0.0, 1.0);
+    
+    vec3 finalColour;
+    if (Fog.enabled > 0.5)
+        finalColour = mix(Fog.color, lighting, fogFactor);
+    else
+        finalColour = lighting;
+
+    FragColor = vec4(finalColour, 1.0);
+    //FragColor = vec4(lighting, 1.0);
 
 }

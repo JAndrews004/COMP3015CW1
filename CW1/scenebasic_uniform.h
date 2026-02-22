@@ -10,16 +10,27 @@
 #include "glm/glm.hpp"
 #include "helper/plane.h"
 #include "helper/objmesh.h"
+#include "helper/skybox.h"
 
 class SceneBasic_Uniform : public Scene
 {
 private:
     GLSLProgram prog;
-    
+    GLSLProgram skyboxProg;
+    GLSLProgram graffitiProg;
     Plane plane;
     std::unique_ptr<ObjMesh> mesh;
     GLuint programHandle;
     GLuint location;
+
+    GLuint hdrTex, avgTex;
+    GLuint hdrFBO;
+
+    SkyBox sky;
+    GLuint cubeTexID;
+    float angle, tPrev, rotSpeed;
+
+    float fog = 1.0f;
 
     glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
     float lastTime = 0.0f;
@@ -41,11 +52,12 @@ private:
 
     glm::vec3 lightLa[5] = { glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f),glm::vec3(0.6f, 0.6f, 0.6f) , glm::vec3(1.0f, 1.0f, 1.0f)};
 
-    GLuint statueTexID, statueNormID, blankMaskID;
+    GLuint statueTexID, statueNormID, blankMaskID, graffitiID;
     GLuint floorTexID, mossTexID, floorNormID, puddleMaskID;
 
     void compile();
     void setMatrices();
+    void setupFBO();
 public:
     SceneBasic_Uniform();
 
@@ -56,6 +68,7 @@ public:
     void toggleLight(int index) override;
     void handleInput(int key) override;
     void handleMouseInput(double mouseX, double mouseY) override;
+    void toggleFog()override;
 };
 
 #endif // SCENEBASIC_UNIFORM_H
