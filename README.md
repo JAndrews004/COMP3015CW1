@@ -1,6 +1,6 @@
 # COMP3015 CW1
 
-##Project Overview
+## Project Overview
 This project is an OpenGL-based real-time rendering prototype developed as part of the COMP3015 module. It demonstrates the implementation of multiple shaders, material systems, lighting models, and scene management within a modern OpenGL pipeline.
 The focus of this prototype is to explore rendering techniques, shader structure, and modular scene organisation rather than full engine architecture.
 
