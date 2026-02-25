@@ -33,20 +33,13 @@ void SceneBasic_Uniform::initScene()
     view = glm::lookAt(vec3(0.5f, 0.75f, 0.75f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f));
     projection = glm::perspective(glm::radians(70.0f), 1.0f, 0.10f, 100.0f);
     
-    float x, z;
-
-    for (int i = 0; i < 3; i++) {
-        std::stringstream name;
-        name << "lights[" << i << "].Position";
-        x = 1.0f * cosf((glm::two_pi<float>() / 3) * i);
-        z = 1.0f * sinf((glm::two_pi<float>() / 3) * i);
-
-        prog.setUniform(name.str().c_str(), view * glm::vec4(x, 1.2f, z + 1.0f, 1.0f));
-
-    }
+    prog.setUniform("lights[0].Position", view * glm::vec4(2.5f, 1.0f, 0.0f, 1.0f));
+    prog.setUniform("lights[1].Position", view * glm::vec4(-1.25f, 1.0f, 2.165f, 1.0f));
+    prog.setUniform("lights[2].Position", view * glm::vec4(-1.25f, 1.0f, -2.165f, 1.0f));
 
     prog.setUniform("lights[3].Position", view * glm::vec4(0, 1.2f, 0, 1.0f));
     topLightPos = glm::vec4(0, 1.2f, 0, 1.0f);
+    prog.setUniform("lights[4].Position", view * glm::vec4(0.0f, 5.0f, 0.0f, 1.0f));
 
     prog.setUniform("lights[0].L", lightL[0]);
     prog.setUniform("lights[0].La", lightLa[0]);
@@ -60,6 +53,9 @@ void SceneBasic_Uniform::initScene()
     prog.setUniform("lights[3].L", lightL[3]);
     prog.setUniform("lights[3].La", lightLa[3]);
     
+    prog.setUniform("lights[4].L", glm::vec3(0.0f,0.0f,0.0f));
+    prog.setUniform("lights[4].La", glm::vec3(0.07f,0.09f,0.15f));
+
     statueTexID = Texture::loadTexture("media/Gold.jpg");
     statueNormID = Texture::loadTexture("media/Gold_NormalMap.jpg");
     blankMaskID = Texture::loadTexture("media/BlankMask.png");
@@ -78,7 +74,7 @@ void SceneBasic_Uniform::initScene()
 
     prog.setUniform("Spot.L", lightL[4]);
     prog.setUniform("Spot.La", lightLa[4]);
-    prog.setUniform("Spot.Exponent", 25.0f);
+    prog.setUniform("Spot.Exponent", 10.0f);
     prog.setUniform("Spot.Cutoff", glm::radians(30.0f));
 
     graffitiProg.setUniform("Tex1", 0);
@@ -205,21 +201,14 @@ void SceneBasic_Uniform::compile()
 
 void SceneBasic_Uniform::update( float t )
 {
-    if (topLightPos.x > 3.0f) {
-        
-        movingPositive = false;
-    }
-    else if (topLightPos.x < -5.0f) {
-        
-        movingPositive = true;
-    }
+    if (animating()) {
+        lightAngle += 1.0f * deltaTime;
 
-    if (movingPositive) {
-        topLightPos += glm::vec4(0.001f, 0.0f, 0.0f, 0.0f);
+        topLightPos.x = 0.0f + 2.5f * cosf(lightAngle);
+        topLightPos.z = 0.0f + 2.5f * sinf(lightAngle);
+        topLightPos.y = 1.0f;
     }
-    else {
-        topLightPos -= glm::vec4(0.001f, 0.0f, 0.0f, 0.0f);
-    }
+    
 }
 
 void SceneBasic_Uniform::render()
@@ -241,7 +230,7 @@ void SceneBasic_Uniform::render()
     prog.setUniform("Material.Kd", glm::vec3(0.8f, 0.65f, 0.2f));
     prog.setUniform("Material.Ka", glm::vec3(0.1f, 0.07f, 0.02f));
     prog.setUniform("Material.Ks", glm::vec3(1.0f, 0.85f, 0.4f));
-    prog.setUniform("Material.Shininess", 128.0f);
+    prog.setUniform("Material.Shininess", 160.0f);
     
     prog.setUniform("Fog.color", glm::vec3(0.5f, 0.5f, 0.5f));
     prog.setUniform("Fog.density", 0.04f);
@@ -278,7 +267,7 @@ void SceneBasic_Uniform::render()
     }
 
     model = mat4(1.0f);
-    model = glm::translate(model, vec3(-1.0f, 0.2f, -0.6f));
+    model = glm::translate(model, vec3(0.0f, 0.3f, 0.0f));
     model = glm::rotate(model, glm::radians(90.0f), vec3(0.0f, 1.0f, 0.0f));
     setMatrices();
 
@@ -325,9 +314,9 @@ void SceneBasic_Uniform::render()
      //graffiti 
     graffitiProg.use();
     model = mat4(1.0f);
-    model = glm::translate(model, vec3(-1.0f, 0.2f, -0.6f));
+    model = glm::translate(model, vec3(0.0f, 0.3f, 0.0f));
     model = glm::rotate(model, glm::radians(90.0f), vec3(0.0f, 1.0f, 0.0f));
-    model = glm::scale(model, glm::vec3(1.01f));
+    model = glm::scale(model, glm::vec3(1.001f));
    
     graffitiProg.setUniform("Material.Kd", glm::vec3(1.0f, 1.0f, 1.0f));
     graffitiProg.setUniform("Material.Ka", glm::vec3(0.03f, 0.03f, 0.03f));
@@ -421,7 +410,7 @@ void SceneBasic_Uniform::toggleLight(int index) {
     }
 }
 void SceneBasic_Uniform::handleInput(int key) {
-    float vel = 0.25f * deltaTime;
+    float vel = 0.5f * deltaTime;
 
     if (key == GLFW_KEY_W)
         position += front * vel;

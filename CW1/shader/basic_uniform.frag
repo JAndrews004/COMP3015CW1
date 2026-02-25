@@ -18,7 +18,7 @@ uniform struct LightInfo{
     vec4 Position;
     vec3 La;
     vec3 L;
-}lights[4];
+}lights[5];
 
 uniform struct MaterialInfo{
     vec3 Kd;
@@ -51,7 +51,7 @@ const float scaleFactor = 1.0/levels;
 vec3 blinnPhongModel(int light, vec3 position,vec3 n,vec3 texColour,MaterialInfo surface)
 {
     float distance = length(lights[light].Position.xyz - Position);
-    float attenuation = 1.0 / (1.0 + 0.09 * distance + 0.08 * distance*distance);
+    float attenuation = 1.0 / (1.0 + 0.2 * distance + 0.3 * distance*distance);
     //float attenuation = 1.0;
     vec3 ambient = lights[light].La * surface.Ka * texColour;
 
@@ -72,8 +72,7 @@ vec3 blinnPhongModel(int light, vec3 position,vec3 n,vec3 texColour,MaterialInfo
 vec3 blinPhongSpotModel(vec3 position, vec3 n,vec3 texColour,MaterialInfo surface)
 {
     float distance = length(Spot.Position.xyz - Position);
-    float attenuation = 1.0 / (1.0 + 0.09 * distance + 0.08 * distance*distance);
-   
+    float attenuation = 1.0 / (1.0 + 0.12 * distance + 0.16 * distance*distance);
 
     vec3 s =  normalize(Spot.Position.xyz - position);
 
@@ -139,9 +138,10 @@ void main() {
     vec3 darkGrey = vec3(0.1, 0.1, 0.1);
     texColour = mix(texColour,darkGrey,wetness);
 
-    texColour = pow(texColour,vec3(0.45));
+    texColour = pow(texColour,vec3(0.45)); // gamma correction
+
     vec3 maskRGB = texture(puddleMask, TexCoord).rgb;
-    for(int i =0;i<4;i++)
+    for(int i =0;i<5;i++)
     {
         lighting += blinnPhongModel(i,Position,n,texColour,surface);
     }

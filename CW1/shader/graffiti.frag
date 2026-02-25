@@ -68,7 +68,7 @@ vec3 blinPhongSpotModel(vec3 position, vec3 n,vec3 texColour,MaterialInfo surfac
 void main() {
     
     float TextureSF = 3.5;
-    float brightness = 1.0;
+    float brightness = 3.0;
 
     vec3 n = normalize(Normal);
 
@@ -78,7 +78,7 @@ void main() {
 
     vec3 lighting = vec3(0.0f);
     lighting += blinPhongSpotModel(Position, n, graffitiTex.rgb, Material);
-    //litGraffiti *= brightness;
+    lighting *= brightness;
 
     float lightFactor = (lighting.r + lighting.g + lighting.b) / 3.0;
     lightFactor = clamp(lightFactor, 0.0, 1.0);
