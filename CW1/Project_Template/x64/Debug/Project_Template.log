@@ -1,1 +1,18 @@
-﻿  Project_Template.vcxproj -> C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\x64\Debug\Project_Template.exe
+﻿  glad.c
+  glslprogram.cpp
+  glutils.cpp
+  objmesh.cpp
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\helper\objmesh.cpp(193,41): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\helper\objmesh.cpp(199,48): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\helper\objmesh.cpp(203,43): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  plane.cpp
+  skybox.cpp
+  texture.cpp
+  trianglemesh.cpp
+  main.cpp
+  scenebasic_uniform.cpp
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\scenebasic_uniform.cpp(384,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\scenebasic_uniform.cpp(439,34): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\scenebasic_uniform.cpp(440,36): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Project_Template.vcxproj -> C:\Users\ja990\OneDrive\Documents\GitHub\COMP3015CW1\CW1\x64\Debug\Project_Template.exe

@@ -21,14 +21,10 @@ uniform mat3 NormalMatrix;
 
 void main()
 {
-
     vec3 N = normalize(NormalMatrix * VertexNormal);
     vec3 T = normalize(NormalMatrix * VertexTangent.xyz);
     T = normalize(T - dot(T, N) * N);
     vec3 B = cross(N, T) * VertexTangent.w;
-
-    //TBN = mat3(T, B, N);
-    //TBN = mat3(1.0);
 
     Tangent = T;
     Bitangent = B;

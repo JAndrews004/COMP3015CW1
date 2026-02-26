@@ -15,12 +15,11 @@ uniform mat3 NormalMatrix;
 
 void main()
 {
-    // Transform position and normal
+
     Position = (ModelViewMatrix * vec4(VertexPosition, 1.0)).xyz;
     NormalInterp = normalize(NormalMatrix * VertexNormal);
     Normal = normalize(NormalMatrix * VertexNormal);
     TexCoord = VertexTexCoord;
 
-    // Set clip space position
     gl_Position = MVP * vec4(VertexPosition, 1.0);
 }
