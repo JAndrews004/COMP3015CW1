@@ -41,3 +41,18 @@ The main use I had of generative AI for this project was to help plan what order
 
 ## Video
 https://youtu.be/wx55NobX0JI 
+
+## Sources
+Statue model: https://www.fab.com/listings/9c44c778-a88e-4060-8024-af45f0b8a7eb
+Statue main texture: https://www.freepik.com/free-photo/abstract-smooth-brown-wall-background-layout-designstudioroomweb-templatebusiness-report-with-smooth-circle-gradient-color_29885834.htm#fromView=keyword&page=2&position=17&uuid=c48f0b52-f3f6-43d6-a68a-7e69ace0799e&query=Bronze+texture
+Statue normal map: https://opengameart.org/node/21133
+Floor plane normal map: https://opengameart.org/node/21129
+Floor plane main texture: https://architextures.org/textures/583
+Floor plane moss mix: https://www.pngegg.com/en/png-mcngd/download
+Floor plane puddle mask: https://opengameart.org/content/noise-texture-pack-super-noise-8-512x512png
+Statue arrow graffiti: https://www.hiclipart.com/free-transparent-background-png-clipart-idybq
+Skybox: https://polyhaven.com/a/shanghai_bund
+Skybox to cubemap converter: https://hdri-to-cubemap-converter.vercel.app/
+
+
+
