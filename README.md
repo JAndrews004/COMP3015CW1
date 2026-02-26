@@ -23,6 +23,8 @@ Helper utilities - Used for texture loading, model loading, some error checking 
 For rendering I  started with the more basic Phong model then changed to Blinn-Phong using attenuation and multiple lights. A struct is used for the lights to make this easier. A material struct is also used to simplify this with Ka, Kd, Ks and shininess. Multiple shaders are used as some models or textures didnt require lighting or the other techniques used. The other techniques used were texture mixing, normal mapping, a mask with varying material properties and gamma correction. This was not needed on the skybox or the graffiti mechanic.
 The graffiti mechanic works by adjusting the alpha based on how much lighting it would recieve, alpha discarding was also used to reduce artifacts. A togglable fog is also implemented to showcase multiple techniques
 
+[ScreenShots/03]
+
 ## Controls
 
 | Action                                      | Key |
@@ -34,4 +36,8 @@ The graffiti mechanic works by adjusting the alpha based on how much lighting it
 | Camera lateral movement     | WASD |
 | Look around     | Mouse |
 
+## Use of AI
+The main use I had of generative AI for this project was to help plan what order to implement features to gain the maximum marks early in case I ran out of time[ScreenShots/01]. I also used it to help when i ran into unkown errors such as a LINK2019 error to save time in the fixing process [ScreenShots/02]. To do this I pasted the error message and asked how to fix it and it gave me a quick guide that worked and now I know what the error is and how to fix it in the future.
+
 ## Video
+https://youtu.be/wx55NobX0JI 
